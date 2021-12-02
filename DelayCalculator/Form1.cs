@@ -59,16 +59,22 @@ namespace DelayCalculator
 
         private void dotBtn_Click(object sender, EventArgs e)
         {
+            if (Convert.ToInt32(noteBox.SelectedIndex) >= 0 && Convert.ToInt32(noteBox.SelectedIndex) < 7)
+            {
             trplBtn.Enabled = false;
             List<double> notes = new List<double> { 1, 0.75, 0.375, 0.1875, 0.014375, 0.046875, 0.023437 };
             k = notes[Convert.ToInt32(noteBox.SelectedIndex)];
+            }
         }
 
         private void trplBtn_Click(object sender, EventArgs e)
         {
+            if (Convert.ToInt32(noteBox.SelectedIndex) >= 0 && Convert.ToInt32(noteBox.SelectedIndex) < 7)
+            {
             dotBtn.Enabled = false;
             List<double> notes = new List<double> { 1, 0.333333, 0.166666, 0.083333, 0.041666, 0.020833, 0.010416 };
             k = notes[Convert.ToInt32(noteBox.SelectedIndex)];
+            }
         }
 
         private void reset_Click(object sender, EventArgs e)
@@ -82,7 +88,9 @@ namespace DelayCalculator
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            MessageBox.Show("Are you shure?", "Message", MessageBoxButtons.YesNo);
+           var result = MessageBox.Show("Are you shure?", "Message", MessageBoxButtons.YesNo);
+            if (result == DialogResult.No)
+                e.Cancel = true;
         }
     }
 }
