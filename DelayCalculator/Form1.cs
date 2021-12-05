@@ -48,6 +48,11 @@ namespace DelayCalculator
                 trplBtn.Enabled = false;
                 dotBtn.Enabled = false;
             }
+            else
+            {
+                trplBtn.Enabled = true;
+                dotBtn.Enabled = true;
+            }
             k = notes[i];
         }
 
@@ -55,23 +60,39 @@ namespace DelayCalculator
         {
             res = k * 240 / bpm;
             outLbl.Text = Convert.ToString(res);
+            if (bpm == 0)
+                MessageBox.Show("Выберите TEMP отличный от нуля"); 
         }
 
         private void dotBtn_Click(object sender, EventArgs e)
         {
             if (Convert.ToInt32(noteBox.SelectedIndex) >= 0 && Convert.ToInt32(noteBox.SelectedIndex) < 7)
             {
-            trplBtn.Enabled = false;
+            //trplBtn.Enabled = false;
             List<double> notes = new List<double> { 1, 0.75, 0.375, 0.1875, 0.014375, 0.046875, 0.023437 };
             k = notes[Convert.ToInt32(noteBox.SelectedIndex)];
+                //dotBtn.Click -= new EventHandler(dotBtn_Click);
+                //dotBtn.Click += new EventHandler(dotBtn_Click_1);
             }
         }
+        //private void dotBtn_Click_1(object sender, EventArgs e)
+        //{
+        //    if (Convert.ToInt32(noteBox.SelectedIndex) >= 0 && Convert.ToInt32(noteBox.SelectedIndex) < 7)
+        //    {
+        //        trplBtn.Enabled = true;
+        //        List<double> notes = new List<double> { 1, 0.5, 0.25, 0.125, 0.0625, 0.03125, 0.015625 };
+        //        int i = Convert.ToInt32(noteBox.SelectedIndex);
+        //        dotBtn.Click -= new EventHandler(dotBtn_Click);
+        //        dotBtn.Click += new EventHandler(dotBtn_Click_1);
+        //    }
+        //}
+
 
         private void trplBtn_Click(object sender, EventArgs e)
         {
             if (Convert.ToInt32(noteBox.SelectedIndex) >= 0 && Convert.ToInt32(noteBox.SelectedIndex) < 7)
             {
-            dotBtn.Enabled = false;
+           // dotBtn.Enabled = false;
             List<double> notes = new List<double> { 1, 0.333333, 0.166666, 0.083333, 0.041666, 0.020833, 0.010416 };
             k = notes[Convert.ToInt32(noteBox.SelectedIndex)];
             }
@@ -92,5 +113,7 @@ namespace DelayCalculator
             if (result == DialogResult.No)
                 e.Cancel = true;
         }
+
+       
     }
 }

@@ -40,7 +40,6 @@ namespace DelayCalculator
             this.inTemp = new System.Windows.Forms.NumericUpDown();
             this.outLbl = new System.Windows.Forms.Label();
             this.goBtn = new System.Windows.Forms.Button();
-            this.reset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.inTemp)).BeginInit();
             this.SuspendLayout();
             // 
@@ -140,6 +139,7 @@ namespace DelayCalculator
             this.noteBox.Name = "noteBox";
             this.noteBox.Size = new System.Drawing.Size(121, 21);
             this.noteBox.TabIndex = 7;
+            this.noteBox.Text = "1";
             this.noteBox.SelectedIndexChanged += new System.EventHandler(this.noteBox_SelectedIndexChanged);
             // 
             // inTemp
@@ -179,26 +179,12 @@ namespace DelayCalculator
             this.goBtn.UseVisualStyleBackColor = false;
             this.goBtn.Click += new System.EventHandler(this.goBtn_Click);
             // 
-            // reset
-            // 
-            this.reset.BackColor = System.Drawing.Color.Lime;
-            this.reset.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.reset.Font = new System.Drawing.Font("Studio Manager Big Font", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.reset.Location = new System.Drawing.Point(277, 13);
-            this.reset.Name = "reset";
-            this.reset.Size = new System.Drawing.Size(216, 29);
-            this.reset.TabIndex = 11;
-            this.reset.Text = "RESET";
-            this.reset.UseVisualStyleBackColor = false;
-            this.reset.Click += new System.EventHandler(this.reset_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumTurquoise;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.reset);
             this.Controls.Add(this.goBtn);
             this.Controls.Add(this.outLbl);
             this.Controls.Add(this.inTemp);
@@ -234,7 +220,6 @@ namespace DelayCalculator
         private System.Windows.Forms.NumericUpDown inTemp;
         private System.Windows.Forms.Label outLbl;
         private System.Windows.Forms.Button goBtn;
-        private System.Windows.Forms.Button reset;
     }
 }
 
