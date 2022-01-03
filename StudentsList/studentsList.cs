@@ -18,10 +18,10 @@ namespace StudentsList
         {
             InitializeComponent();
             personaList.Items.AddRange(studens);
-        }      
-        bool coincidence(string[] Arr )
+        }
+        bool coincidence(string[] Arr)
         {
-            bool check = true;            
+            bool check = true;
             int Count = 0;
             for (int i = 0; i < Arr.Length; i++)
             {
@@ -34,9 +34,9 @@ namespace StudentsList
             if (Count != 0)
                 check = false;
             return check;
-        }       
+        }
         private void runBtn_Click(object sender, EventArgs e)
-        {                       
+        {
             if (actionBox.SelectedIndex == 0)
             {
                 if (personaList.CheckedItems.Count == 0)
@@ -44,16 +44,16 @@ namespace StudentsList
                     presentBox.Items.AddRange(personaList.Items.OfType<string>().ToArray());
                     personaList.Items.Clear();
                 }
-               res = coincidence(presentBox.Items.OfType<string>().ToArray());
+                res = coincidence(presentBox.Items.OfType<string>().ToArray());
                 if (res)
 
                     presentBox.Items.AddRange(personaList.CheckedItems.OfType<string>().ToArray());
                 else
-                    MessageBox.Show("Эти студенты уже есть в этом списке");              
+                    MessageBox.Show("Эти студенты уже есть в этом списке");
                 for (int i = 0; i < personaList.CheckedItems.Count; i++)
                     personaList.Items.Remove(personaList.CheckedItems[i--]);
             }
-     
+
             if (actionBox.SelectedIndex == 1)
             {
                 if (personaList.CheckedItems.Count == 0)
@@ -65,7 +65,7 @@ namespace StudentsList
                 if (res)
                     missingBox.Items.AddRange(personaList.CheckedItems.OfType<string>().ToArray());
                 else
-                    MessageBox.Show("Эти студенты уже есть в этом списке");                     
+                    MessageBox.Show("Эти студенты уже есть в этом списке");
                 for (int i = 0; i < personaList.CheckedItems.Count; i++)
                     personaList.Items.Remove(personaList.CheckedItems[i--]);
             }
@@ -84,14 +84,48 @@ namespace StudentsList
 
         private void presentBtn_Click(object sender, EventArgs e)
         {
-            personaList.Items.AddRange(presentBox.Items.OfType<string>().ToArray());            
+            personaList.Items.AddRange(presentBox.Items.OfType<string>().ToArray());
             presentBox.Items.Clear();
         }
 
         private void missingBtn_Click(object sender, EventArgs e)
         {
-                personaList.Items.AddRange(missingBox.Items.OfType<string>().ToArray());
+            personaList.Items.AddRange(missingBox.Items.OfType<string>().ToArray());
             missingBox.Items.Clear();
+        }
+
+        private void ListBtn_Click(object sender, EventArgs e)
+        {
+            personaList.Items.Clear();
+        }
+
+        private void removeSelBtn_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < personaList.CheckedItems.Count; i++)
+                personaList.Items.Remove(personaList.CheckedItems[i--]);
+        }
+
+        private void addBtn_Click(object sender, EventArgs e)
+        {
+            bool newPerson = personaList.Items.Contains(addBox.Text);
+            if (newPerson)
+            {
+                MessageBox.Show("Этот студент уже есть в списке");
+            }
+            else
+            {
+                personaList.Items.Add(addBox.Text);
+            }
+        }
+
+        private void editBtn_Click(object sender, EventArgs e)
+        {
+            //personaList.SelectedItem = addBox.Text;
+        }
+
+        private void personaList_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }
