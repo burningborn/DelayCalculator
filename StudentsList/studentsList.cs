@@ -119,13 +119,9 @@ namespace StudentsList
         }
 
         private void editBtn_Click(object sender, EventArgs e)
-        {
-            //personaList.SelectedItem = addBox.Text;
-        }
-
-        private void personaList_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-
-        }
+        {     
+                addBox.Text = Convert.ToString(personaList.SelectedItem);
+            personaList.Items.Remove(personaList.SelectedItem);
+        }      
     }
 }
