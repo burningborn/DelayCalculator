@@ -197,8 +197,8 @@ namespace StudentsList
             // 
             // addBox
             // 
-            this.addBox.Location = new System.Drawing.Point(936, 183);
-            this.addBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addBox.Location = new System.Drawing.Point(936, 129);
+            this.addBox.Margin = new System.Windows.Forms.Padding(2);
             this.addBox.Name = "addBox";
             this.addBox.Size = new System.Drawing.Size(175, 20);
             this.addBox.TabIndex = 14;
@@ -219,9 +219,9 @@ namespace StudentsList
             this.editBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.editBtn.Location = new System.Drawing.Point(936, 208);
             this.editBtn.Name = "editBtn";
-            this.editBtn.Size = new System.Drawing.Size(175, 23);
+            this.editBtn.Size = new System.Drawing.Size(175, 41);
             this.editBtn.TabIndex = 17;
-            this.editBtn.Text = "Редактировать ";
+            this.editBtn.Text = "Редактировать выделенный\r\n";
             this.editBtn.UseVisualStyleBackColor = true;
             this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
             // 
@@ -229,6 +229,7 @@ namespace StudentsList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1150, 512);
             this.Controls.Add(this.editBtn);
             this.Controls.Add(this.addBtn);

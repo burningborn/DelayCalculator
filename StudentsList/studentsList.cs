@@ -119,9 +119,25 @@ namespace StudentsList
         }
 
         private void editBtn_Click(object sender, EventArgs e)
-        {     
-                addBox.Text = Convert.ToString(personaList.SelectedItem);
-            personaList.Items.Remove(personaList.SelectedItem);
-        }      
+        {
+            //if (personaList.CheckedItems.Count > 1)
+            //    MessageBox.Show("Выберите только одно имя");
+
+            if (personaList.SelectedItems.Count == 1)
+            {
+                Editor editList = new Editor(Convert.ToString(personaList.SelectedItem));
+                personaList.Items.Remove(personaList.SelectedItem);
+                editList.ShowDialog();
+                bool newPerson = personaList.Items.Contains(editList.Editable.Name);
+                if (newPerson)
+                {
+                    MessageBox.Show("Этот студент уже есть в списке");
+                }
+                else
+                {
+                    personaList.Items.Add(editList.Editable.Name);
+                }
+            }           
+        }           
     }
 }
