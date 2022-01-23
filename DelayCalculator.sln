@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentsList", "StudentsLis
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordCount", "WordCount\WordCount.csproj", "{268CC357-5B29-4061-B957-84706662E25A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotePad", "NotePad\NotePad.csproj", "{11EEF30E-D9F1-4BCA-B3AE-78FF722FB23D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{268CC357-5B29-4061-B957-84706662E25A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{268CC357-5B29-4061-B957-84706662E25A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{268CC357-5B29-4061-B957-84706662E25A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11EEF30E-D9F1-4BCA-B3AE-78FF722FB23D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11EEF30E-D9F1-4BCA-B3AE-78FF722FB23D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11EEF30E-D9F1-4BCA-B3AE-78FF722FB23D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11EEF30E-D9F1-4BCA-B3AE-78FF722FB23D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
